@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "appium-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "appium-mcp@latest"
+      ],
+      "env": {
+        "APPIUM_SERVER_URL": "http://127.0.0.1:4723",
+        "CAPABILITIES_CONFIG": "${workspaceFolder}/config/capabilities.json"
+      }
+    }
+  }
+}

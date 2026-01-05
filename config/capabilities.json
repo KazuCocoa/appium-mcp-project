@@ -1,0 +1,14 @@
+{
+  "android": {
+    "appium:app": "/path/to/your/android/app.apk",
+    "appium:deviceName": "Android Device",
+    "appium:platformVersion": "11.0",
+    "appium:automationName": "UiAutomator2",
+    "appium:udid": "your-device-udid"
+  },
+  "ios": {
+    "appium:deviceName": "iPhone 17",
+    "appium:platformVersion": "26.0",
+    "appium:automationName": "XCUITest"
+  }
+}
