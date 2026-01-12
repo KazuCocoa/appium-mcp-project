@@ -2,12 +2,11 @@
   "servers": {
     "appium-mcp": {
       "type": "stdio",
-      "command": "npx",
+      "command": "node",
       "args": [
-        "appium-mcp@latest"
+        "/Users/kazu/github/appium-mcp/dist/index.js"
       ],
       "env": {
-        "APPIUM_SERVER_URL": "http://127.0.0.1:4723",
         "CAPABILITIES_CONFIG": "${workspaceFolder}/config/capabilities.json"
       }
     }
