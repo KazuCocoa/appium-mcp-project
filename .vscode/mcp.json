@@ -4,7 +4,7 @@
       "type": "stdio",
       "command": "npx",
       "args": [
-        "appium-mcp@1.8.0"
+        "appium-mcp@latest"
       ],
       "env": {
         "CAPABILITIES_CONFIG": "${workspaceFolder}/config/capabilities.json"

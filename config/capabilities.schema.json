@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Appium Capabilities Configuration",
+  "description": "Platform-specific Appium capabilities for MCP server",
+  "type": "object",
+  "properties": {
+    "android": {
+      "description": "Android platform capabilities",
+      "type": "object",
+      "properties": {
+        "appium:app": {
+          "type": "string",
+          "description": "Path to Android app (.apk)"
+        },
+        "appium:deviceName": {
+          "type": "string",
+          "description": "Android device name"
+        },
+        "appium:platformVersion": {
+          "type": "string",
+          "description": "Android OS version (e.g., '11.0', '14.0')"
+        },
+        "appium:automationName": {
+          "type": "string",
+          "enum": ["UiAutomator2", "Espresso"],
+          "description": "Android automation driver"
+        },
+        "appium:udid": {
+          "type": "string",
+          "description": "Device UDID for specific device targeting"
+        }
+      }
+    },
+    "ios": {
+      "description": "iOS platform capabilities",
+      "type": "object",
+      "properties": {
+        "platformName": {
+          "type": "string",
+          "const": "iOS",
+          "description": "Platform name (always 'iOS')"
+        },
+        "appium:app": {
+          "type": "string",
+          "description": "Path to iOS app (.app or .ipa)"
+        },
+        "appium:deviceName": {
+          "type": "string",
+          "description": "iOS device/simulator name (e.g., 'iPhone 17')"
+        },
+        "appium:platformVersion": {
+          "type": "string",
+          "description": "iOS version (e.g., '17.0', '26.2')"
+        },
+        "appium:automationName": {
+          "type": "string",
+          "const": "XCUITest",
+          "description": "iOS automation driver (always 'XCUITest')"
+        },
+        "appium:udid": {
+          "type": "string",
+          "description": "Device UDID for specific device targeting"
+        },
+        "appium:bundleId": {
+          "type": "string",
+          "description": "iOS app bundle identifier (e.g., 'com.example.app')"
+        }
+      }
+    },
+    "general": {
+      "description": "Platform-agnostic capabilities (W3C format, passed through to Appium)",
+      "type": "object",
+      "properties": {
+        "platformName": {
+          "type": "string",
+          "description": "Platform name (iOS, Android, etc.)"
+        },
+        "appium:automationName": {
+          "type": "string",
+          "description": "Automation driver name"
+        },
+        "appium:deviceName": {
+          "type": "string",
+          "description": "Device name"
+        },
+        "appium:platformVersion": {
+          "type": "string",
+          "description": "Platform version"
+        }
+      },
+      "required": ["platformName", "appium:automationName"],
+      "additionalProperties": true
+    }
+  },
+  "examples": [
+    {
+      "android": {
+        "appium:app": "/path/to/app.apk",
+        "appium:deviceName": "Pixel 7",
+        "appium:platformVersion": "14.0",
+        "appium:automationName": "UiAutomator2"
+      },
+      "ios": {
+        "platformName": "iOS",
+        "appium:deviceName": "iPhone 17",
+        "appium:platformVersion": "26.2",
+        "appium:automationName": "XCUITest"
+      },
+      "general": {
+        "platformName": "iOS",
+        "appium:automationName": "XCUITest",
+        "appium:deviceName": "iPhone 17",
+        "appium:platformVersion": "26.2"
+      }
+    }
+  ]
+}
