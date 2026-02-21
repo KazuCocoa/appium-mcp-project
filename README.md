@@ -125,11 +125,3 @@ The MCP server needs a running Appium server.
 
 - Fix: run `appium server` and confirm the URL you pass as `remoteServerUrl` is reachable.
 - Fix: ensure your Appium driver (e.g. `uiautomator2` / `xcuitest`) is installed and the device/simulator is available.
-
-### Quick diagnostics
-
-Run the local “doctor” script to check Node/Appium and your capabilities config:
-
-```bash
-node scripts/appium-mcp-doctor.mjs
-```
